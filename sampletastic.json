@@ -1,0 +1,220 @@
+{
+  "tasticType": "demo/showcase",
+  "name": "Field Types Showcase",
+  "category": "Examples",
+  "maxUsePerPage": 1,
+  "icon": "preview",
+  "schema": [
+    {
+      "name": "Information Section",
+      "fields": [
+        {
+          "type": "description",
+          "text": "This component showcases all available field types."
+        },
+        {
+          "type": "image",
+          "url": "https://example.com/preview-image.png"
+        }
+      ]
+    },
+    {
+      "name": "Basic Fields",
+      "fields": [
+        {
+          "label": "Component Title",
+          "field": "title",
+          "type": "string",
+          "default": "My Component",
+          "required": true,
+          "translatable": true,
+          "minLength": 3,
+          "maxLength": 50
+        },
+        {
+          "label": "Description",
+          "field": "description",
+          "type": "text",
+          "translatable": true,
+          "minLength": 10,
+          "maxLength": 500
+        },
+        {
+          "label": "Is Active",
+          "field": "isActive",
+          "type": "boolean",
+          "default": true
+        }
+      ]
+    },
+    {
+      "name": "Specialized Text Fields",
+      "fields": [
+        {
+          "label": "Rich Content",
+          "field": "content",
+          "type": "markdown",
+          "default": "# Welcome\nEnter your content here",
+          "translatable": true
+        },
+        {
+          "label": "Configuration",
+          "field": "config",
+          "type": "json",
+          "default": {
+            "enabled": true,
+            "options": []
+          }
+        }
+      ]
+    },
+    {
+      "name": "Selection Fields",
+      "fields": [
+        {
+          "label": "Theme",
+          "field": "theme",
+          "type": "enum",
+          "values": [
+            {
+              "name": "Light Theme",
+              "value": "light"
+            },
+            {
+              "name": "Dark Theme",
+              "value": "dark"
+            }
+          ],
+          "default": "light"
+        },
+        {
+          "label": "Page Selection",
+          "field": "page",
+          "type": "node",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "Numeric Fields",
+      "fields": [
+        {
+          "label": "Items Per Page",
+          "field": "itemsPerPage",
+          "type": "integer",
+          "default": 10,
+          "min": 1,
+          "max": 50
+        },
+        {
+          "label": "Price",
+          "field": "price",
+          "type": "decimal",
+          "default": 99.99
+        }
+      ]
+    },
+    {
+      "name": "Media and Links",
+      "fields": [
+        {
+          "label": "Header Image",
+          "field": "headerImage",
+          "type": "media",
+          "required": true
+        },
+        {
+          "label": "Button Link",
+          "field": "buttonLink",
+          "type": "reference",
+          "translatable": true,
+          "default": {
+            "type": "link",
+            "target": "https://example.com"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Data Integration",
+      "fields": [
+        {
+          "label": "Product List",
+          "field": "products",
+          "type": "dataSource",
+          "dataSourceType": "demo/product-list",
+          "required": true
+        },
+        {
+          "label": "Search Filters",
+          "field": "filters",
+          "type": "dynamic-filter",
+          "dynamicFilterEndpoint": "/action/products/filters"
+        }
+      ]
+    },
+    {
+      "name": "Security and Time",
+      "fields": [
+        {
+          "label": "API Key",
+          "field": "apiKey",
+          "type": "encrypted",
+          "required": true
+        },
+        {
+          "label": "Schedule Date",
+          "field": "scheduleDate",
+          "type": "instant",
+          "default": "2024-12-31T23:59:59Z"
+        }
+      ]
+    },
+    {
+      "name": "Navigation",
+      "fields": [
+        {
+          "label": "Menu Structure",
+          "field": "menu",
+          "type": "tree",
+          "default": {
+            "node": "root-node-id",
+            "depth": 2
+          }
+        }
+      ]
+    },
+    {
+      "name": "Complex Fields",
+      "fields": [
+        {
+          "label": "Content Blocks",
+          "field": "blocks",
+          "type": "group",
+          "itemLabelField": "blockTitle",
+          "min": 1,
+          "max": 5,
+          "fields": [
+            {
+              "label": "Block Title",
+              "field": "blockTitle",
+              "type": "string",
+              "required": true
+            },
+            {
+              "label": "Block Content",
+              "field": "blockContent",
+              "type": "markdown",
+              "translatable": true
+            },
+            {
+              "label": "Block Image",
+              "field": "blockImage",
+              "type": "media"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
